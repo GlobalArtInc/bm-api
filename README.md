@@ -16,7 +16,7 @@ const client = new BM(apiKey);
 ## Примеры кода
 ```js
 // Получить информацию о боте
-client.bot(botId).then((data) => {
+client.getBot(botId).then((data) => {
     console.log(data)
 })
 
