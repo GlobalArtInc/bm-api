@@ -1,0 +1,23 @@
+{
+    "name": "@globalart/bm-api",
+    "version": "1.0",
+    "description": "Библиотека для работы с monitor.betterbot.ru",
+    "main": "bm.js",
+    "license": "MIT",
+    "author": {
+        "name": "GloalArt",
+        "url": "https://ga-games.com/"
+    },
+    "keywords": [
+        "discord",
+        "api",
+        "betterbot"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GlobalArtInc/bm-api.git"
+    },
+    "dependencies": {
+        "axios": "^0.26.1"
+    }
+}
