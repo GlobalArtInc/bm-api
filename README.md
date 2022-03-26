@@ -20,6 +20,11 @@ client.getBot(botId).then((data) => {
     console.log(data)
 })
 
+// Получить информацию о пользователе
+client.getProfile(userId).then((data) => {
+    console.log(data)
+})
+
 // Узнать, если пользователь проголосовал за бота
 client.checkVote(userId).then((data) => {
     console.log(data)

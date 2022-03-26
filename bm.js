@@ -42,6 +42,13 @@ class BM {
         })
     }
 
+    async getProfile(userId) {
+        return this.request({
+            method: "GET",
+            path: "/profile/" + userId
+        })
+    }
+
     async refreshBotData(data) {
         if (!this.token)
             new Error("No token specified")
