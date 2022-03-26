@@ -11,10 +11,7 @@ jobs: # Задания
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
       - run: npm run build
-      - run: npm test
-      - run: npm run codestyle
 
   publish: # Опубликовать
     needs: test # Запускать только если тест прошёл успешно
