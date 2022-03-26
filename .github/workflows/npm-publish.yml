@@ -11,8 +11,7 @@ jobs: # Задания
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm run build
-
+          
   publish: # Опубликовать
     needs: test # Запускать только если тест прошёл успешно
     runs-on: ubuntu-latest
