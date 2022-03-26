@@ -11,7 +11,7 @@ jobs: # Задания
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          
+
   publish: # Опубликовать
     needs: test # Запускать только если тест прошёл успешно
     runs-on: ubuntu-latest
@@ -21,7 +21,6 @@ jobs: # Задания
         with:
           node-version: 12 # Запускать на 12 ноде
           registry-url: https://registry.npmjs.org/
-      - run: npm run build # Выполняем билд
 
       - name: Publish stable # Публикуем стабильную версию
         run: npm publish --tag stable
