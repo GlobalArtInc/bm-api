@@ -53,7 +53,7 @@ class BM {
         if (!this.token)
             new Error("No token specified")
         return this.request({
-            method: "POST",
+            method: "GET",
             path: "/bots/stats",
             headers: {
                 Authorization: this.token,
