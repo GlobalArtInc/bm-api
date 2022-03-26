@@ -3,19 +3,31 @@ on:
   push:
     branches:
       - master
-jobs:
-  build:
+jobs: # Задания
+  test: # Тестирование, тут всё просто
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}'
-          # Defaults to the user or organization that owns the workflow file
-          scope: '@globalart'
-      - run: yarn
-      - run: yarn publish
+          node-version: 12
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: npm run codestyle
+
+  publish: # Опубликовать
+    needs: test # Запускать только если тест прошёл успешно
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12 # Запускать на 12 ноде
+          registry-url: https://registry.npmjs.org/
+      - run: npm run build # Выполняем билд
+
+      - name: Publish stable # Публикуем стабильную версию
+        run: npm publish --tag stable
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
