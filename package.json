@@ -1,6 +1,6 @@
 {
     "name": "@globalart/bm-api",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Библиотека для работы с monitor.betterbot.ru",
     "main": "bm.js",
     "license": "MIT",
