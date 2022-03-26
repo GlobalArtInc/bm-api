@@ -1,28 +1,25 @@
 name: Publish Package to npmjs
 on:
-  push:
-    branches:
-      - master
-jobs: # Задания
-  test: # Тестирование, тут всё просто
+  release:
+    types: [created]
+jobs:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-
-  publish: # Опубликовать
-    needs: test # Запускать только если тест прошёл успешно
+  publish:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12 # Запускать на 12 ноде
+          node-version: 12
           registry-url: https://registry.npmjs.org/
-
-      - name: Publish stable # Публикуем стабильную версию
+      - name: Publish stable
         run: npm publish --tag stable
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
