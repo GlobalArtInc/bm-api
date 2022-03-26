@@ -20,6 +20,11 @@ client.getBot(botId).then((data) => {
     console.log(data)
 })
 
+// Узнать, если пользователь проголосовал за бота
+client.checkVote(userId).then((data) => {
+    console.log(data)
+})
+
 // Опубликовать статистику бота
 client.refreshBotData({
     serverCount: 0,
