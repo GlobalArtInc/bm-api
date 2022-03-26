@@ -2,7 +2,7 @@
 
 ## Установка
 ```sh
-$ npm install github:GlobalArtInc/bm-api
+$ npm install @globalart/bm-api
 ```
 ## Инициализация враппера
 ```js
