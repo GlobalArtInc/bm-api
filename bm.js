@@ -30,6 +30,18 @@ class BM {
         });
     }
 
+    async checkVote(userId) {
+        if (!this.token)
+            new Error("No token specified")
+        return this.request({
+            method: "GET",
+            path: "/bots/check/" + userId,
+            headers: {
+                Authorization: this.token
+            }
+        })
+    }
+
     async refreshBotData(data) {
         if (!this.token)
             new Error("No token specified")
