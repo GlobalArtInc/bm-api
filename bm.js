@@ -30,6 +30,13 @@ class BM {
         });
     }
 
+    async getBotComments(botId) {
+        return this.request({
+            method: "GET",
+            path: "/bots/" + botId + "/comments"
+        });
+    }
+
     async checkVote(userId) {
         if (!this.token)
             new Error("No token specified")
@@ -59,6 +66,13 @@ class BM {
                 Authorization: this.token,
                 ...data
             }
+        });
+    }
+
+    async getServer(serverId) {
+        return this.request({
+            method: "GET",
+            path: "/server/" + serverId
         });
     }
 
