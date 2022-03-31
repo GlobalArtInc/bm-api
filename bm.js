@@ -31,9 +31,14 @@ class BM {
     }
 
     async getBotComments(botId) {
+        if (!this.token)
+            new Error("No token specified");
         return this.request({
             method: "GET",
-            path: "/bots/" + botId + "/comments"
+            path: "/bots/" + botId + "/comments",
+            headers: {
+                Authorization: this.token
+            }
         });
     }
 
