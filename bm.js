@@ -3,7 +3,7 @@ const axios = require("axios");
 class BM {
     constructor(token = null) {
         this.token = token;
-        this.apiUrl = "https://monitor.betterbot.ru/api"
+        this.apiUrl = "https://api.bettercord.xyz/v1"
     }
 
     async request(data) {
