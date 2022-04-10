@@ -9,10 +9,9 @@ export class UsersProvider {
     }
 
     /**
-     * get a user profile by ID
-     * @param userId
+     * Get a user profile by ID
+     * @param userId - userId
      */
-
     async profile(userId: string): Promise<UsersProfileInterface> {
         try {
             const response = await axios(`${Endpoints.API_URL}/profile/${userId}`, {

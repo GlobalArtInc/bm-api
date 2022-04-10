@@ -8,6 +8,10 @@ export class ServersProvider {
     ) {
     }
 
+    /**
+     * Get server info by ID
+     * @param serverId - server ID
+     **/
     async info(serverId: string): Promise<ServersInfoInterface> {
         try {
             const response = await axios(`${Endpoints.API_URL}/server/${serverId}`, {
