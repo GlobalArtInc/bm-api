@@ -38,11 +38,9 @@ client.bots.checkVote(userId).then((response) => {
     console.log(response)
 })
 
-// IN DEVELOPMENT
 // Опубликовать статистику бота
-// client.bots.stats({
-//     serverCount: 0,
-//     shardCount: 0
-// })
-
+client.bots.postStats({
+    serverCount: 0,
+    shardCount: 0
+})
 ```

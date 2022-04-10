@@ -15,7 +15,7 @@ class BotsProvider {
     async info(botId) {
         var _a, _b;
         try {
-            const response = await axios_1.default.get(`${core_1.Endpoints.API_URL}/bots/${botId}`, {
+            const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/${botId}`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token
@@ -34,7 +34,7 @@ class BotsProvider {
     async comments(botId) {
         var _a, _b;
         try {
-            const response = await axios_1.default.get(`${core_1.Endpoints.API_URL}/bots/${botId}/comments`, {
+            const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/${botId}/comments`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token
@@ -49,14 +49,34 @@ class BotsProvider {
     /**
      * Checking if specified user is voted for the bot
      * @param userId - user ID
-     * */
+     */
     async checkVote(userId) {
         var _a, _b;
         try {
-            const response = await axios_1.default.get(`${core_1.Endpoints.API_URL}/bots/check/${userId}`, {
+            const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/check/${userId}`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token
+                }
+            });
+            return Promise.resolve(response.data);
+        }
+        catch (err) {
+            return Promise.reject((_b = (_a = err === null || err === void 0 ? void 0 : err.response) === null || _a === void 0 ? void 0 : _a.data) !== null && _b !== void 0 ? _b : "An error occurred");
+        }
+    }
+    /**
+     * Publish the bot stats to the monitoring
+     * @param data
+     */
+    async postStats(data) {
+        var _a, _b;
+        try {
+            const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/stats`, {
+                method: "POST",
+                headers: {
+                    Authorization: this.options.token,
+                    ...data
                 }
             });
             return Promise.resolve(response.data);

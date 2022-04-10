@@ -15,7 +15,7 @@ class UsersProvider {
     async profile(userId) {
         var _a, _b;
         try {
-            const response = await axios_1.default.get(`${core_1.Endpoints.API_URL}/profile/${userId}`, {
+            const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/profile/${userId}`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token

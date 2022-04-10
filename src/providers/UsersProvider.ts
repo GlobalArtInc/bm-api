@@ -15,7 +15,7 @@ export class UsersProvider {
 
     async profile(userId: string): Promise<UsersProfileInterface> {
         try {
-            const response = await axios.get(`${Endpoints.API_URL}/profile/${userId}`, {
+            const response = await axios(`${Endpoints.API_URL}/profile/${userId}`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token

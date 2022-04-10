@@ -14,7 +14,7 @@ export class BotsProvider {
      **/
     async info(botId: string): Promise<BotsInfoInterface> {
         try {
-            const response = await axios.get(`${Endpoints.API_URL}/bots/${botId}`, {
+            const response = await axios(`${Endpoints.API_URL}/bots/${botId}`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token
@@ -32,7 +32,7 @@ export class BotsProvider {
      **/
     async comments(botId: string) {
         try {
-            const response = await axios.get(`${Endpoints.API_URL}/bots/${botId}/comments`, {
+            const response = await axios(`${Endpoints.API_URL}/bots/${botId}/comments`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token
@@ -47,13 +47,32 @@ export class BotsProvider {
     /**
      * Checking if specified user is voted for the bot
      * @param userId - user ID
-     * */
+     */
     async checkVote(userId: string) {
         try {
-            const response = await axios.get(`${Endpoints.API_URL}/bots/check/${userId}`, {
+            const response = await axios(`${Endpoints.API_URL}/bots/check/${userId}`, {
                 method: "GET",
                 headers: {
                     Authorization: this.options.token
+                }
+            })
+            return Promise.resolve(response.data)
+        } catch (err: any) {
+            return Promise.reject(err?.response?.data ?? "An error occurred")
+        }
+    }
+
+    /**
+     * Publish the bot stats to the monitoring
+     * @param data
+     */
+    async postStats(data: any) {
+        try {
+            const response = await axios(`${Endpoints.API_URL}/bots/stats`, {
+                method: "POST",
+                headers: {
+                    Authorization: this.options.token,
+                    ...data
                 }
             })
             return Promise.resolve(response.data)
