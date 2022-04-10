@@ -6,34 +6,43 @@ $ npm install @globalart/bm-api
 ```
 ## Инициализация враппера
 ```js
-let apiKey = "Your token here";
-// API ключ можно получить на странице редактирования вашего бота
+// ES6
+import { Client } from '@globalart/bm-api'
 
-const BM = require("@globalart/bm-api");
-const client = new BM(apiKey);
+const client = new Client({
+    token: 'BOT_TOKEN_IS_HERE'
+})
+
+// CommonJS
+const { Client } = require('@globalart/bm-api')
+
+const client = new Client({
+    token: 'BOT_TOKEN_IS_HERE'
+})
 ```
 
 ## Примеры кода
 ```js
 // Получить информацию о боте
-client.getBot(botId).then((data) => {
-    console.log(data)
+client.bots.info(botId).then((response) => {
+    console.log(response)
 })
 
 // Получить информацию о пользователе
-client.getProfile(userId).then((data) => {
-    console.log(data)
+client.users.profile(userId).then((response) => {
+    console.log(response)
 })
 
 // Узнать, если пользователь проголосовал за бота
-client.checkVote(userId).then((data) => {
-    console.log(data)
+client.bots.checkVote(userId).then((response) => {
+    console.log(response)
 })
 
+// IN DEVELOPMENT
 // Опубликовать статистику бота
-client.refreshBotData({
-    serverCount: 0,
-    shardCount: 0
-})
+// client.bots.stats({
+//     serverCount: 0,
+//     shardCount: 0
+// })
 
 ```

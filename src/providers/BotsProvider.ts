@@ -26,7 +26,7 @@ export class BotsProvider {
     }
 
     /**
-     * Get bot comments
+     * Get the bot comments
      * @param botId - bot ID
      **/
     async comments(botId: string) {
