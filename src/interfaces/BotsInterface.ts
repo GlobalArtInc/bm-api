@@ -13,3 +13,8 @@ export interface BotsInfoInterface {
     certificate: string,
     website: string
 }
+
+export interface BotsPostData {
+    serverCount?: number,
+    shardCount?: number
+}

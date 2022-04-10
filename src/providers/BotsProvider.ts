@@ -1,6 +1,7 @@
 import {ClientOptions, Endpoints} from "../core";
 import axios from "axios";
 import {BotsInfoInterface} from "../interfaces";
+import {BotsPostData} from "@src/interfaces/BotsInterface";
 
 export class BotsProvider {
     constructor(
@@ -66,7 +67,7 @@ export class BotsProvider {
      * Publish the bot stats to the monitoring
      * @param data
      */
-    async postStats(data: any) {
+    async postStats(data: BotsPostData) {
         try {
             const response = await axios(`${Endpoints.API_URL}/bots/stats`, {
                 method: "POST",

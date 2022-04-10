@@ -1,5 +1,6 @@
 import { ClientOptions } from "../core";
 import { BotsInfoInterface } from "../interfaces";
+import { BotsPostData } from "@src/interfaces/BotsInterface";
 export declare class BotsProvider {
     options: ClientOptions;
     constructor(options: ClientOptions);
@@ -16,6 +17,11 @@ export declare class BotsProvider {
     /**
      * Checking if specified user is voted for the bot
      * @param userId - user ID
-     * */
+     */
     checkVote(userId: string): Promise<any>;
+    /**
+     * Publish the bot stats to the monitoring
+     * @param data
+     */
+    postStats(data: BotsPostData): Promise<any>;
 }
