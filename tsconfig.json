@@ -24,10 +24,11 @@
     "isolatedModules": false,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "paths": {
+      "@src/*": [ "src/*" ]
+    },
     "outDir": "./dist",
-    "plugins": [
-      { "transform": "@zerollup/ts-transform-paths" }
-    ]
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
   "exclude": [
     "node_modules",
