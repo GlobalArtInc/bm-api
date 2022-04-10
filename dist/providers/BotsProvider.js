@@ -13,18 +13,18 @@ class BotsProvider {
      * @param botId - bot ID
      **/
     async info(botId) {
-        var _a, _b;
+        var _a, _b, _c;
         try {
             const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/${botId}`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: (_a = this.options.token) !== null && _a !== void 0 ? _a : ""
                 }
             });
             return Promise.resolve(response.data);
         }
         catch (err) {
-            return Promise.reject((_b = (_a = err === null || err === void 0 ? void 0 : err.response) === null || _a === void 0 ? void 0 : _a.data) !== null && _b !== void 0 ? _b : "An error occurred");
+            return Promise.reject((_c = (_b = err === null || err === void 0 ? void 0 : err.response) === null || _b === void 0 ? void 0 : _b.data) !== null && _c !== void 0 ? _c : "An error occurred");
         }
     }
     /**
@@ -32,18 +32,18 @@ class BotsProvider {
      * @param botId - bot ID
      **/
     async comments(botId) {
-        var _a, _b;
+        var _a, _b, _c;
         try {
             const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/${botId}/comments`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: (_a = this.options.token) !== null && _a !== void 0 ? _a : ""
                 }
             });
             return Promise.resolve(response.data);
         }
         catch (err) {
-            return Promise.reject((_b = (_a = err === null || err === void 0 ? void 0 : err.response) === null || _a === void 0 ? void 0 : _a.data) !== null && _b !== void 0 ? _b : "An error occurred");
+            return Promise.reject((_c = (_b = err === null || err === void 0 ? void 0 : err.response) === null || _b === void 0 ? void 0 : _b.data) !== null && _c !== void 0 ? _c : "An error occurred");
         }
     }
     /**
@@ -51,18 +51,18 @@ class BotsProvider {
      * @param userId - user ID
      */
     async checkVote(userId) {
-        var _a, _b;
+        var _a, _b, _c;
         try {
             const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/check/${userId}`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: (_a = this.options.token) !== null && _a !== void 0 ? _a : ""
                 }
             });
             return Promise.resolve(response.data);
         }
         catch (err) {
-            return Promise.reject((_b = (_a = err === null || err === void 0 ? void 0 : err.response) === null || _a === void 0 ? void 0 : _a.data) !== null && _b !== void 0 ? _b : "An error occurred");
+            return Promise.reject((_c = (_b = err === null || err === void 0 ? void 0 : err.response) === null || _b === void 0 ? void 0 : _b.data) !== null && _c !== void 0 ? _c : "An error occurred");
         }
     }
     /**
@@ -70,19 +70,19 @@ class BotsProvider {
      * @param data
      */
     async postStats(data) {
-        var _a, _b;
+        var _a, _b, _c;
         try {
             const response = await (0, axios_1.default)(`${core_1.Endpoints.API_URL}/bots/stats`, {
                 method: "POST",
                 headers: {
-                    Authorization: this.options.token,
+                    Authorization: (_a = this.options.token) !== null && _a !== void 0 ? _a : "",
                     ...data
                 }
             });
             return Promise.resolve(response.data);
         }
         catch (err) {
-            return Promise.reject((_b = (_a = err === null || err === void 0 ? void 0 : err.response) === null || _a === void 0 ? void 0 : _a.data) !== null && _b !== void 0 ? _b : "An error occurred");
+            return Promise.reject((_c = (_b = err === null || err === void 0 ? void 0 : err.response) === null || _b === void 0 ? void 0 : _b.data) !== null && _c !== void 0 ? _c : "An error occurred");
         }
     }
 }

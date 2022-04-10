@@ -1,7 +1,7 @@
 import {ClientOptions, Endpoints} from "../core";
 import axios from "axios";
 import {BotsInfoInterface} from "../interfaces";
-import {BotsPostData} from "@src/interfaces/BotsInterface";
+import {BotsPostData} from "../interfaces/BotsInterface";
 
 export class BotsProvider {
     constructor(
@@ -18,7 +18,7 @@ export class BotsProvider {
             const response = await axios(`${Endpoints.API_URL}/bots/${botId}`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: this.options.token ?? ""
                 }
             })
             return Promise.resolve(response.data)
@@ -36,7 +36,7 @@ export class BotsProvider {
             const response = await axios(`${Endpoints.API_URL}/bots/${botId}/comments`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: this.options.token ?? ""
                 }
             })
             return Promise.resolve(response.data)
@@ -54,7 +54,7 @@ export class BotsProvider {
             const response = await axios(`${Endpoints.API_URL}/bots/check/${userId}`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: this.options.token ?? ""
                 }
             })
             return Promise.resolve(response.data)
@@ -72,7 +72,7 @@ export class BotsProvider {
             const response = await axios(`${Endpoints.API_URL}/bots/stats`, {
                 method: "POST",
                 headers: {
-                    Authorization: this.options.token,
+                    Authorization: this.options.token ?? "",
                     ...data
                 }
             })

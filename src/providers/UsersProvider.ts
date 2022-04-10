@@ -18,7 +18,7 @@ export class UsersProvider {
             const response = await axios(`${Endpoints.API_URL}/profile/${userId}`, {
                 method: "GET",
                 headers: {
-                    Authorization: this.options.token
+                    Authorization: this.options.token ?? ""
                 }
             })
             return Promise.resolve(response.data)

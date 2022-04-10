@@ -1,6 +1,6 @@
 import { ClientOptions } from "../core";
 import { BotsInfoInterface } from "../interfaces";
-import { BotsPostData } from "@src/interfaces/BotsInterface";
+import { BotsPostData } from "../interfaces/BotsInterface";
 export declare class BotsProvider {
     options: ClientOptions;
     constructor(options: ClientOptions);

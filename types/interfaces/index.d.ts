@@ -1,2 +1,2 @@
-export { UsersProfileInterface } from './UsersInterface';
-export { BotsInfoInterface } from './BotsInterface';
+export { UsersProfileInterface } from '../interfaces/UsersInterface';
+export { BotsInfoInterface } from '../interfaces/BotsInterface';

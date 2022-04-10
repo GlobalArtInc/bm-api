@@ -24,9 +24,6 @@
     "isolatedModules": false,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@src/*": [ "src/*" ]
-    },
     "outDir": "./dist",
     "plugins": [
       { "transform": "@zerollup/ts-transform-paths" }

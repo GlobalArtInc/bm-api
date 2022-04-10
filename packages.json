@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "core",
+    "interfaces",
+    "providers"
+  ]
+}
