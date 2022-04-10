@@ -1,5 +1,6 @@
 import {ClientOptions, Endpoints} from "../core";
 import axios from "axios";
+import {UsersProfileInterface} from "../interfaces";
 
 export class UsersProvider {
     constructor(
@@ -12,7 +13,7 @@ export class UsersProvider {
      * @param userId
      */
 
-    async profile(userId: string) {
+    async profile(userId: string): Promise<UsersProfileInterface> {
         try {
             const response = await axios.get(`${Endpoints.API_URL}/profile/${userId}`, {
                 method: "GET",

@@ -1,6 +1,6 @@
 {
     "name": "@globalart/bm-api",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Библиотека для работы с bettercord.xyz",
     "main": "dist/index.js",
     "module": "dist/index.js",

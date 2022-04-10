@@ -1,1 +1,2 @@
-export { ProfileResponse } from './ProfileResponse';
+export { UsersProfileInterface } from './UsersInterface';
+export { BotsInfoInterface } from './BotsInterface';

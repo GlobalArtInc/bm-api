@@ -1,5 +1,6 @@
 import {ClientOptions, Endpoints} from "../core";
 import axios from "axios";
+import {BotsInfoInterface} from "../interfaces";
 
 export class BotsProvider {
     constructor(
@@ -11,7 +12,7 @@ export class BotsProvider {
      * Get bot information by botId
      * @param botId - bot ID
      **/
-    async info(botId: string) {
+    async info(botId: string): Promise<BotsInfoInterface> {
         try {
             const response = await axios.get(`${Endpoints.API_URL}/bots/${botId}`, {
                 method: "GET",

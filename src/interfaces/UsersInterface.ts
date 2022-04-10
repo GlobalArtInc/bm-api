@@ -1,4 +1,4 @@
-export interface ProfileResponse {
+export interface UsersProfileInterface {
     id: string,
     biography: string | null,
     website: string | null,

@@ -1,4 +1,5 @@
 import { ClientOptions } from "../core";
+import { BotsInfoInterface } from "../interfaces";
 export declare class BotsProvider {
     options: ClientOptions;
     constructor(options: ClientOptions);
@@ -6,9 +7,9 @@ export declare class BotsProvider {
      * Get bot information by botId
      * @param botId - bot ID
      **/
-    info(botId: string): Promise<any>;
+    info(botId: string): Promise<BotsInfoInterface>;
     /**
-     * Get bot comments
+     * Get the bot comments
      * @param botId - bot ID
      **/
     comments(botId: string): Promise<any>;
