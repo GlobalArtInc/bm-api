@@ -1,2 +1,3 @@
-export {UsersProfileInterface} from '../interfaces/UsersInterface'
-export {BotsInfoInterface} from '../interfaces/BotsInterface'
+export * from './UsersInterface'
+export * from './BotsInterface'
+export * from './ServersInterface'
