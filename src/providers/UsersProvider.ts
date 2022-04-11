@@ -25,4 +25,21 @@ export class UsersProvider {
             return Promise.reject(err?.response?.data ?? "An error occurred")
         }
     }
+
+    /**
+     * Checking if user voted for the server
+     * @param guildId - guildID
+     * @param userId - userID
+     */
+    async checkVote(guildId: string, userId: string) {
+        try {
+            const response = await axios(`${Endpoints.API_URL}/server/${guildId}/${userId}`, {
+                method: "GET"
+            })
+            return Promise.resolve(response.data)
+        } catch (err: any) {
+            return Promise.reject(err?.response?.data ?? "An error occurred")
+        }
+    }
+
 }
